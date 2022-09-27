@@ -1,0 +1,154 @@
+
+<section class="vh-100" >
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-lg-12 col-xl-11">
+          <div class="card text-black" style="border-radius: 25px;">
+            <div class="card-body p-md-5">
+              <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+  
+                  <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">User Sign up</p>
+  
+                  <form class="mx-1 mx-md-4" [formGroup]="objregisterform">
+  
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <input type="text" formControlName="first_name" id="first_name" class="form-control" required />
+                        <label class="form-label" for="form3Example1c" >Your First Name</label>
+                        <div class="validation" *ngIf="objregisterform.controls['first_name'].touched">
+                          <div *ngIf="objregisterform.controls['first_name']?.errors?.['required']" class="error">first_name is required
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+  
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <input type="text" id="last_name" formControlName="last_name" class="form-control" />
+                        <label class="form-label" for="form3Example3c" required>Your Last name</label>
+                        <div class="validation" *ngIf="objregisterform.controls['last_name'].touched">
+                          <div *ngIf="objregisterform.controls['last_name']?.errors?.['required']" class="error">last_name is required
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+  
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <input type="email" id="email" class="form-control"  formControlName="email" required />
+                        <label class="form-label" for="form3Example4c">Email</label>
+                        <div class="validation" *ngIf="objregisterform.controls['email'].touched">
+                          <div *ngIf="objregisterform.controls['email']?.errors?.['required']" class="error">Email is required
+                          </div>
+                          <div *ngIf="objregisterform.controls['email']?.errors?.['maxlength']" class="error">Maximum 10
+                              characters are allowed</div>
+                          <div *ngIf="objregisterform.controls['email']?.errors?.['pattern']" class="error">val</div>
+                      </div>
+                      </div>
+                    </div>
+
+                    <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                        <div class="form-outline flex-fill mb-0">
+                          <input type="password" id="password" class="form-control" formControlName="password" required />
+                          <label class="form-label" for="form3Example4c">Password</label>
+                          <div class="validation" *ngIf="objregisterform.controls['password'].touched">
+                          <div *ngIf="objregisterform.controls['password']?.errors?.['required']" class="error">Password is required</div>
+                         <div *ngIf="objregisterform.controls['password']?.errors?.['minlength']" class="error">Minimum 8 characters are required</div>
+                         <div *ngIf="objregisterform.controls['password']?.errors?.['pattern']" class="error">Enter valid data</div>
+                         </div>
+                      </div>
+                    </div>
+
+                      <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                        <div class="form-outline flex-fill mb-0">
+                          <input type="date" id="dob" class="form-control" formControlName="dob"  required />
+                          <label class="form-label" for="form3Example4c">Dob</label>
+                          <div class="validation" *ngIf="objregisterform.controls['dob'].touched">
+                            <div *ngIf="objregisterform.controls['dob']?.errors?.['required']" class="error">dob is required
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                        <div class="form-outline flex-fill mb-0">
+                  
+                          <select name="gender" id="gender" type="text" id="form3Example4c" class="form-control" formControlName="gender" required>
+                            <option value="">-Select Gender-</option>
+                            <option value="0">M</option>
+                            <option value="1">F</option>
+                            <option value="2">O</option>
+                        </select>
+
+                          <label class="form-label" for="form3Example4c">Gender</label>
+                          <div class="validation" *ngIf="objregisterform.controls['gender'].touched">
+                            <div *ngIf="objregisterform.controls['gender']?.errors?.['required']" class="error">gender is required
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                        <div class="form-outline flex-fill mb-0">
+                          <!-- <input type="text" id="form3Example4c" class="form-control" formControlName="country" required /> -->
+                          
+
+                          <select id="form3Example4c" class="form-control" name="country" id="country" formControlName="country" >
+                            <option *ngFor="let country of countries" value={{country.countryId}}>{{country.country}} </option>
+                          </select>
+                          <label class="form-label" for="form3Example4c">Country</label>
+                          <div class="validation" *ngIf="objregisterform.controls['country'].touched">
+                            <div *ngIf="objregisterform.controls['country']?.errors?.['required']" class="error">country is required
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+  
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                       
+                        <form method="post" th:action="@{/upload}" enctype="multipart/form-data">
+                          <div class="form-group">
+                              <input (change)="onChange($event)" type="file" name="image" accept="image/*" class="form-control-file">
+                          </div>
+                          </form>
+
+
+                        <label class="form-label" for="form3Example4cd" >Profile</label>
+                      </div>
+                    </div>
+
+  <!-- image access -->
+  
+ <!-- image access -->
+                    <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                      <button type="button" class="btn btn-primary btn-lg" (click)="signin()" >Register</button>
+                    </div>
+  
+                  </form>
+  
+                </div>
+                <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+  
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
+                    class="img-fluid" alt="Sample image">
+  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ 

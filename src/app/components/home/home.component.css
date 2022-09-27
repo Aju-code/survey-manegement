@@ -1,0 +1,21 @@
+
+h1{
+  text-align: center;
+}
+h3 {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    animation-name: example;
+    animation-duration: 4s;
+  }
+#div1 {animation-timing-function: linear;}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.abc{
+  height: 70px;
+}

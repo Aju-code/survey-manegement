@@ -1,0 +1,55 @@
+<html>
+
+<body class="loginbody">
+
+    <div *ngIf="alert" class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong><a class="aler">Please Enter username and password the field cannot be empty</a></strong>
+    </div>
+    
+    <div class="logincontainer">
+        <form [formGroup]='objloginform' (ngSubmit)="login()">
+            <h1>Login</h1>
+            <div class="inputbox">
+                <input type="text" placeholder=" email" formControlName="email">
+                <div *ngIf="objloginform.controls['email'].touched">
+                    <div *ngIf="objloginform.controls['email']?.errors?.['required']" class="error">Email is required
+                    </div>
+                    <div *ngIf="objloginform.controls['email']?.errors?.['maxlength']" class="error">Maximum 10
+                        characters are allowed</div>
+                    <div *ngIf="objloginform.controls['email']?.errors?.['pattern']" class="error">val</div>
+                </div>
+
+            </div><br>
+            <div class="inputbox">
+                <input type="password" placeholder="Password" formControlName="password">
+                <div *ngIf="objloginform.controls['password'].touched">
+                    <div *ngIf="objloginform.controls['password']?.errors?.['required']" class="error">Password is
+                        required</div>
+                    <div *ngIf="objloginform.controls['password']?.errors?.['minlength']" class="error">Minimum 8
+                        characters are required</div>
+                    <div *ngIf="objloginform.controls['password']?.errors?.['pattern']" class="error">Enter valid data
+                    </div>
+                </div>
+
+            </div><br>
+            <div class="loginbutton">
+
+                <input type="submit" value="Login">
+            </div>
+            
+        </form>
+        <div class="loginbutton">
+
+            <input type="submit" value="registration" routerLink="../registration">
+        </div>
+                
+                <br><mat-icon  aria-hidden="false" aria-label="Example home icon" fontIcon="home" routerLink="home">home</mat-icon>&nbsp;
+                <mat-icon>facebook</mat-icon>
+               
+                
+        </div>
+        
+
+</body>
+
+</html>

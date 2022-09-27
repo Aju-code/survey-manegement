@@ -1,0 +1,39 @@
+<!-- Image and text -->
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-secondary">
+    <div class="container-fluid">
+      <button
+      
+        class="navbar-toggler"
+        style=" box-sizing: inherit"
+        type="button"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+      <div
+        class="collapse navbar-collapse"
+        style=" box-sizing: inherit"
+        id="navbarText"
+        mdbCollapse
+      >
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" style=" box-sizing: inherit" aria-current="page" routerLink="../user">Home</a>
+          </li>
+          <li class="nav-item" style=" box-sizing: inherit">
+            <a class="nav-link" routerLink="../listsurvey" >Survey</a>
+          </li>
+          
+         
+         
+        </ul>
+        <div >
+         
+          <a class="nav-link active" aria-current="page" (click)="logout()">logout</a></div>
+        
+      </div>
+    </div>
+  </nav>
+</body>
